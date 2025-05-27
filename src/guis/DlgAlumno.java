@@ -15,7 +15,7 @@ import javax.swing.JTable;
 import javax.swing.JScrollPane;
 import javax.swing.table.DefaultTableModel;
 
-public class DlgMantenimiento extends JDialog {
+public class DlgAlumno extends JDialog {
 
 	private static final long serialVersionUID = 1L;
 	private JLabel lblCodigo;
@@ -48,7 +48,7 @@ public class DlgMantenimiento extends JDialog {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					DlgMantenimiento dialog = new DlgMantenimiento();
+					DlgAlumno dialog = new DlgAlumno();
 					dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 					dialog.setVisible(true);
 				} catch (Exception e) {
@@ -61,7 +61,7 @@ public class DlgMantenimiento extends JDialog {
 	/**
 	 * Create the dialog.
 	 */
-	public DlgMantenimiento() {
+	public DlgAlumno() {
 		getContentPane().setBackground(new Color(51, 153, 204));
 		getContentPane().setLayout(null);
 		
