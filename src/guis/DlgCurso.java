@@ -3,6 +3,7 @@ package guis;
 import java.awt.EventQueue;
 
 import javax.swing.JDialog;
+import java.awt.Color;
 
 public class DlgCurso extends JDialog {
 
@@ -29,6 +30,7 @@ public class DlgCurso extends JDialog {
 	 * Create the dialog.
 	 */
 	public DlgCurso() {
+		getContentPane().setBackground(new Color(51, 153, 204));
 		setBounds(100, 100, 800, 600);
 
 	}

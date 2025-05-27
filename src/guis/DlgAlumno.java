@@ -62,6 +62,7 @@ public class DlgAlumno extends JDialog {
 	 * Create the dialog.
 	 */
 	public DlgAlumno() {
+		setTitle("Mantenimiento | Alumno");
 		getContentPane().setBackground(new Color(51, 153, 204));
 		getContentPane().setLayout(null);
 		
