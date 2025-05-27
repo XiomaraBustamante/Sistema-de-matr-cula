@@ -111,6 +111,7 @@ public class Principal extends JFrame implements ActionListener {
 		menuBar.add(mnRegistro);
 		
 		mntmMatrícula = new JMenuItem("Matrícula");
+		mntmMatrícula.addActionListener(this);
 		mntmMatrícula.setFont(new Font("Roboto Condensed", Font.BOLD, 13));
 		mnRegistro.add(mntmMatrícula);
 		
@@ -118,6 +119,7 @@ public class Principal extends JFrame implements ActionListener {
 		mnRegistro.add(separator2);
 		
 		mntmRetiro = new JMenuItem("Retiro");
+		mntmRetiro.addActionListener(this);
 		mntmRetiro.setFont(new Font("Roboto Condensed", Font.BOLD, 13));
 		mnRegistro.add(mntmRetiro);
 		
@@ -166,6 +168,12 @@ public class Principal extends JFrame implements ActionListener {
 		contentPane.add(lblImagen);
 	}
 	public void actionPerformed(ActionEvent e) {
+		if (e.getSource() == mntmRetiro) {
+			actionPerformedMntmRetiro(e);
+		}
+		if (e.getSource() == mntmMatrícula) {
+			actionPerformedMntmMatrícula(e);
+		}
 		if (e.getSource() == mntmCursos) {
 			actionPerformedMntmCursos(e);
 		}
@@ -187,6 +195,16 @@ public class Principal extends JFrame implements ActionListener {
 	}
 	protected void actionPerformedMntmCursos(ActionEvent e) {
 		DlgCurso dc = new DlgCurso();
+		 dc.setLocationRelativeTo(this);
+		 dc.setVisible(true);
+	}
+	protected void actionPerformedMntmMatrícula(ActionEvent e) {
+		DlgMatricula dc = new DlgMatricula();
+		 dc.setLocationRelativeTo(this);
+		 dc.setVisible(true);
+	}
+	protected void actionPerformedMntmRetiro(ActionEvent e) {
+		DlgRetiro dc = new DlgRetiro();
 		 dc.setLocationRelativeTo(this);
 		 dc.setVisible(true);
 	}
