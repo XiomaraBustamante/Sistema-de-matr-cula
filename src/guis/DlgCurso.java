@@ -29,7 +29,7 @@ public class DlgCurso extends JDialog {
 	 * Create the dialog.
 	 */
 	public DlgCurso() {
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 800, 600);
 
 	}
 

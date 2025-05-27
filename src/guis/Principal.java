@@ -93,6 +93,7 @@ public class Principal extends JFrame implements ActionListener {
 		menuBar.add(mnMantenimiento);
 		
 		mntmAlumnos = new JMenuItem("Alumnos");
+		mntmAlumnos.addActionListener(this);
 		mntmAlumnos.setFont(new Font("Roboto Condensed", Font.BOLD, 13));
 		mnMantenimiento.add(mntmAlumnos);
 		
@@ -164,11 +165,20 @@ public class Principal extends JFrame implements ActionListener {
 		contentPane.add(lblImagen);
 	}
 	public void actionPerformed(ActionEvent e) {
+		if (e.getSource() == mntmAlumnos) {
+			actionPerformedMntmAlumnos(e);
+		}
 		if (e.getSource() == mntmSalir) {
 			actionPerformedMntmSalir(e);
 		}
 	}
 	protected void actionPerformedMntmSalir(ActionEvent e) {
 		System.exit(0);
+	}
+	
+	protected void actionPerformedMntmAlumnos(ActionEvent e) {
+		DlgAlumno dc = new DlgAlumno();
+		 dc.setLocationRelativeTo(this);
+		 dc.setVisible(true);
 	}
 }
