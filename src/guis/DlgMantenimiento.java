@@ -39,7 +39,7 @@ public class DlgMantenimiento extends JDialog {
 	private JButton btnModificar;
 	private JButton btnEliminar;
 	private JScrollPane scpPane;
-	private JTable tablaEstudiantes;
+	private JTable TablaEstudiantes;
 
 	/**
 	 * Launch the application.
@@ -191,22 +191,12 @@ public class DlgMantenimiento extends JDialog {
 		scpPane.setBounds(10, 321, 764, 229);
 		getContentPane().add(scpPane);
 		
-		tablaEstudiantes = new JTable();
-		tablaEstudiantes.setModel(new DefaultTableModel(
-			new Object[][] {
-				{null, null, null, null, null, null, null},
-				{null, null, null, null, null, null, null},
-				{null, null, null, null, null, null, null},
-				{null, null, null, null, null, null, null},
-				{null, null, null, null, null, null, null},
-				{null, null, null, null, null, null, null},
-			},
-			new String[] {
-				"C\u00D3DIGO", "NOMBRES", "APELLIDOS", "DNI", "EDAD", "CELULAR", "ESTADO"
-			}
-		));
-		scpPane.setViewportView(tablaEstudiantes);
+		TablaEstudiantes = new JTable();
+		scpPane.setViewportView(TablaEstudiantes);
 		setBounds(100, 100, 800, 600);
+		
+		
+		
 
 	}
 }
