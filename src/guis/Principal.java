@@ -13,8 +13,10 @@ import java.awt.Font;
 import javax.swing.JSeparator;
 import javax.swing.JLabel;
 import javax.swing.ImageIcon;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
-public class Principal extends JFrame {
+public class Principal extends JFrame implements ActionListener {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
@@ -80,6 +82,7 @@ public class Principal extends JFrame {
 		menuBar.add(mnArchivo);
 		
 		mntmSalir = new JMenuItem("Salir");
+		mntmSalir.addActionListener(this);
 		mntmSalir.setForeground(new Color(0, 0, 0));
 		mntmSalir.setFont(new Font("Roboto Condensed", Font.BOLD, 13));
 		mnArchivo.add(mntmSalir);
@@ -159,5 +162,13 @@ public class Principal extends JFrame {
 		lblImagen.setIcon(new ImageIcon(Principal.class.getResource("/img/MENU.jpg")));
 		lblImagen.setBounds(0, 46, 784, 515);
 		contentPane.add(lblImagen);
+	}
+	public void actionPerformed(ActionEvent e) {
+		if (e.getSource() == mntmSalir) {
+			actionPerformedMntmSalir(e);
+		}
+	}
+	protected void actionPerformedMntmSalir(ActionEvent e) {
+		System.exit(0);
 	}
 }
