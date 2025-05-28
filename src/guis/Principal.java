@@ -129,6 +129,7 @@ public class Principal extends JFrame implements ActionListener {
 		menuBar.add(mnConsulta);
 		
 		mntmAlumno = new JMenuItem("Alumno");
+		mntmAlumno.addActionListener(this);
 		mntmAlumno.setFont(new Font("Roboto Condensed", Font.BOLD, 13));
 		mnConsulta.add(mntmAlumno);
 		
@@ -168,6 +169,9 @@ public class Principal extends JFrame implements ActionListener {
 		contentPane.add(lblImagen);
 	}
 	public void actionPerformed(ActionEvent e) {
+		if (e.getSource() == mntmAlumno) {
+			actionPerformedMntmAlumno(e);
+		}
 		if (e.getSource() == mntmRetiro) {
 			actionPerformedMntmRetiro(e);
 		}
@@ -205,6 +209,11 @@ public class Principal extends JFrame implements ActionListener {
 	}
 	protected void actionPerformedMntmRetiro(ActionEvent e) {
 		DlgRetiro dc = new DlgRetiro();
+		 dc.setLocationRelativeTo(this);
+		 dc.setVisible(true);
+	}
+	protected void actionPerformedMntmAlumno(ActionEvent e) {
+		DlgConsuAlumno dc = new DlgConsuAlumno();
 		 dc.setLocationRelativeTo(this);
 		 dc.setVisible(true);
 	}

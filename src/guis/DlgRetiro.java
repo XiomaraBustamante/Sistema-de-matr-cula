@@ -38,6 +38,7 @@ public class DlgRetiro extends JDialog {
 	 * Create the dialog.
 	 */
 	public DlgRetiro() {
+		setTitle("Registro | Retiro");
 		setBounds(100, 100, 800, 600);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBackground(new Color(51, 153, 204));
@@ -66,21 +67,5 @@ public class DlgRetiro extends JDialog {
 		txtNumMatri.setColumns(10);
 		txtNumMatri.setBounds(163, 62, 159, 20);
 		contentPanel.add(txtNumMatri);
-		{
-			JPanel buttonPane = new JPanel();
-			buttonPane.setLayout(new FlowLayout(FlowLayout.RIGHT));
-			getContentPane().add(buttonPane, BorderLayout.SOUTH);
-			{
-				JButton okButton = new JButton("OK");
-				okButton.setActionCommand("OK");
-				buttonPane.add(okButton);
-				getRootPane().setDefaultButton(okButton);
-			}
-			{
-				JButton cancelButton = new JButton("Cancel");
-				cancelButton.setActionCommand("Cancel");
-				buttonPane.add(cancelButton);
-			}
-		}
 	}
 }
