@@ -9,6 +9,7 @@ import java.awt.Font;
 import javax.swing.JTextField;
 import javax.swing.JTextArea;
 import javax.swing.JScrollPane;
+import javax.swing.JButton;
 
 public class DlgConsuAlumno extends JDialog {
 
@@ -17,6 +18,7 @@ public class DlgConsuAlumno extends JDialog {
 	private JTextField txtCodAlum;
 	private JScrollPane scpPane;
 	private JTextArea txtS;
+	private JButton btnConsultar;
 
 	/**
 	 * Launch the application.
@@ -60,6 +62,13 @@ public class DlgConsuAlumno extends JDialog {
 		
 		txtS = new JTextArea();
 		scpPane.setViewportView(txtS);
+		
+		btnConsultar = new JButton("Consultar");
+		btnConsultar.setForeground(Color.BLACK);
+		btnConsultar.setFont(new Font("Roboto Condensed", Font.PLAIN, 13));
+		btnConsultar.setBackground(new Color(102, 204, 102));
+		btnConsultar.setBounds(451, 18, 89, 23);
+		getContentPane().add(btnConsultar);
 		setBounds(100, 100, 578, 477);
 
 	}
