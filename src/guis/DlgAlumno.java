@@ -15,8 +15,11 @@ import javax.swing.JTable;
 import javax.swing.JScrollPane;
 import javax.swing.table.DefaultTableModel;
 import clases.Alumno;
+import java.awt.event.MouseListener;
+import java.awt.event.MouseEvent;
+import javax.swing.UIManager;
 
-public class DlgAlumno extends JDialog {
+public class DlgAlumno extends JDialog implements MouseListener {
 
 	private static final long serialVersionUID = 1L;
 	private JLabel lblCodigo;
@@ -32,15 +35,17 @@ public class DlgAlumno extends JDialog {
 	private JTextField txtDni;
 	private JTextField txtEdad;
 	private JTextField txtCelular;
-	private JButton btnBuscar;
+	private JScrollPane scpPane;
+	private JTable TablaEstudiantes;
 	private JComboBox cboEstado;
-	private JButton btnAdicionar;
+	private DefaultTableModel modelo;
+	private JButton btnBuscar;
 	private JButton btnOk;
+	private JButton btnOpciones;
+	private JButton btnNewButton;
 	private JButton btnConsultar;
 	private JButton btnModificar;
 	private JButton btnEliminar;
-	private JScrollPane scpPane;
-	private JTable TablaEstudiantes;
 
 	/**
 	 * Launch the application.
@@ -64,12 +69,12 @@ public class DlgAlumno extends JDialog {
 	 */
 	public DlgAlumno() {
 		setTitle("Mantenimiento | Alumno");
-		getContentPane().setBackground(new Color(51, 153, 204));
+		getContentPane().setBackground(Color.LIGHT_GRAY);
 		getContentPane().setLayout(null);
 		
 		lblCodigo = new JLabel("Código");
-		lblCodigo.setForeground(new Color(255, 255, 255));
-		lblCodigo.setFont(new Font("Roboto Condensed", Font.BOLD, 17));
+		lblCodigo.setForeground(Color.BLACK);
+		lblCodigo.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		lblCodigo.setBounds(10, 11, 68, 32);
 		getContentPane().add(lblCodigo);
 		
@@ -79,38 +84,38 @@ public class DlgAlumno extends JDialog {
 		txtCodigo.setColumns(10);
 		
 		lblNombre = new JLabel("Nombres");
-		lblNombre.setForeground(Color.WHITE);
-		lblNombre.setFont(new Font("Roboto Condensed", Font.BOLD, 17));
+		lblNombre.setForeground(Color.BLACK);
+		lblNombre.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		lblNombre.setBounds(10, 54, 68, 32);
 		getContentPane().add(lblNombre);
 		
 		lblApellidos = new JLabel("Apellidos");
-		lblApellidos.setForeground(Color.WHITE);
-		lblApellidos.setFont(new Font("Roboto Condensed", Font.BOLD, 17));
+		lblApellidos.setForeground(Color.BLACK);
+		lblApellidos.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		lblApellidos.setBounds(10, 99, 68, 32);
 		getContentPane().add(lblApellidos);
 		
 		lblDNI = new JLabel("DNI");
-		lblDNI.setForeground(Color.WHITE);
-		lblDNI.setFont(new Font("Roboto Condensed", Font.BOLD, 17));
+		lblDNI.setForeground(Color.BLACK);
+		lblDNI.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		lblDNI.setBounds(10, 142, 68, 32);
 		getContentPane().add(lblDNI);
 		
 		lblEdad = new JLabel("Edad");
-		lblEdad.setForeground(Color.WHITE);
-		lblEdad.setFont(new Font("Roboto Condensed", Font.BOLD, 17));
+		lblEdad.setForeground(Color.BLACK);
+		lblEdad.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		lblEdad.setBounds(10, 187, 68, 32);
 		getContentPane().add(lblEdad);
 		
 		lblCelular = new JLabel("Celular");
-		lblCelular.setForeground(Color.WHITE);
-		lblCelular.setFont(new Font("Roboto Condensed", Font.BOLD, 17));
+		lblCelular.setForeground(Color.BLACK);
+		lblCelular.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		lblCelular.setBounds(10, 230, 68, 32);
 		getContentPane().add(lblCelular);
 		
 		lblEstado = new JLabel("Estado");
-		lblEstado.setForeground(Color.WHITE);
-		lblEstado.setFont(new Font("Roboto Condensed", Font.BOLD, 17));
+		lblEstado.setForeground(Color.BLACK);
+		lblEstado.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		lblEstado.setBounds(10, 274, 68, 32);
 		getContentPane().add(lblEstado);
 		
@@ -139,66 +144,81 @@ public class DlgAlumno extends JDialog {
 		txtCelular.setBounds(81, 238, 212, 20);
 		getContentPane().add(txtCelular);
 		
-		btnBuscar = new JButton("Buscar");
-		btnBuscar.setFont(new Font("Roboto Condensed", Font.PLAIN, 13));
-		btnBuscar.setForeground(new Color(0, 0, 0));
-		btnBuscar.setBackground(new Color(102, 204, 102));
-		btnBuscar.setBounds(204, 18, 89, 23);
-		getContentPane().add(btnBuscar);
-		
-		cboEstado = new JComboBox();
-		cboEstado.setFont(new Font("Roboto Condensed", Font.PLAIN, 12));
-		cboEstado.setBackground(new Color(204, 204, 204));
-		cboEstado.setForeground(new Color(0, 0, 0));
-		cboEstado.setModel(new DefaultComboBoxModel(new String[] {"Registrado", "Matrículado", "Retirado"}));
-		cboEstado.setBounds(81, 281, 113, 25);
-		getContentPane().add(cboEstado);
-		
-		btnAdicionar = new JButton("Adicionar");
-		btnAdicionar.setForeground(new Color(255, 255, 255));
-		btnAdicionar.setBackground(new Color(102, 204, 102));
-		btnAdicionar.setFont(new Font("Roboto Condensed", Font.BOLD, 14));
-		btnAdicionar.setBounds(352, 99, 176, 165);
-		getContentPane().add(btnAdicionar);
-		
-		btnOk = new JButton("Ok");
-		btnOk.setForeground(Color.BLACK);
-		btnOk.setFont(new Font("Roboto Condensed", Font.PLAIN, 13));
-		btnOk.setBackground(new Color(102, 204, 102));
-		btnOk.setBounds(204, 281, 89, 23);
-		getContentPane().add(btnOk);
-		
-		btnConsultar = new JButton("Consultar");
-		btnConsultar.setForeground(Color.WHITE);
-		btnConsultar.setFont(new Font("Roboto Condensed", Font.BOLD, 14));
-		btnConsultar.setBackground(new Color(102, 204, 102));
-		btnConsultar.setBounds(598, 87, 176, 40);
-		getContentPane().add(btnConsultar);
-		
-		btnModificar = new JButton("Modificar");
-		btnModificar.setForeground(Color.WHITE);
-		btnModificar.setFont(new Font("Roboto Condensed", Font.BOLD, 14));
-		btnModificar.setBackground(new Color(102, 204, 102));
-		btnModificar.setBounds(598, 149, 176, 40);
-		getContentPane().add(btnModificar);
-		
-		btnEliminar = new JButton("Eliminar");
-		btnEliminar.setForeground(Color.WHITE);
-		btnEliminar.setFont(new Font("Roboto Condensed", Font.BOLD, 14));
-		btnEliminar.setBackground(new Color(102, 204, 102));
-		btnEliminar.setBounds(598, 215, 176, 40);
-		getContentPane().add(btnEliminar);
-		
 		scpPane = new JScrollPane();
 		scpPane.setBounds(10, 321, 764, 229);
 		getContentPane().add(scpPane);
 		
 		TablaEstudiantes = new JTable();
+		TablaEstudiantes.addMouseListener(this);
+		TablaEstudiantes.setFillsViewportHeight(true);
 		scpPane.setViewportView(TablaEstudiantes);
+		
+		modelo = new DefaultTableModel();
+		modelo.addColumn("CÓDIGO");
+		modelo.addColumn("NOMBRES");
+		modelo.addColumn("APELLIDOS");
+		modelo.addColumn("DNI");
+		modelo.addColumn("EDAD");
+		modelo.addColumn("CELULAR");
+		modelo.addColumn("ESTADO");
+		TablaEstudiantes.setModel(modelo);
+		
+		
+		cboEstado = new JComboBox();
+		cboEstado.setFont(new Font("Roboto Condensed", Font.PLAIN, 13));
+		cboEstado.setModel(new DefaultComboBoxModel(new String[] {"Registrado", "Matrículado", "Retirado"}));
+		cboEstado.setBounds(81, 281, 113, 22);
+		getContentPane().add(cboEstado);
+		
+		btnBuscar = new JButton("Buscar");
+		btnBuscar.setBounds(204, 18, 89, 23);
+		getContentPane().add(btnBuscar);
+		
+		btnOk = new JButton("Ok");
+		btnOk.setBounds(204, 281, 89, 23);
+		getContentPane().add(btnOk);
+		
+		btnOpciones = new JButton("Opciones");
+		btnOpciones.setBounds(480, 49, 143, 122);
+		getContentPane().add(btnOpciones);
+		
+		btnNewButton = new JButton("Adicionar");
+		btnNewButton.setBounds(633, 49, 141, 23);
+		getContentPane().add(btnNewButton);
+		
+		btnConsultar = new JButton("Consultar");
+		btnConsultar.setBounds(633, 83, 141, 23);
+		getContentPane().add(btnConsultar);
+		
+		btnModificar = new JButton("Modificar");
+		btnModificar.setBounds(633, 118, 141, 23);
+		getContentPane().add(btnModificar);
+		
+		btnEliminar = new JButton("Eliminar");
+		btnEliminar.setBounds(633, 149, 141, 23);
+		getContentPane().add(btnEliminar);
 		setBounds(100, 100, 800, 600);
 		
 		
 		
 
+	}
+	public void mouseClicked(MouseEvent e) {
+		if (e.getSource() == TablaEstudiantes) {
+			mouseClickedTablaEstudiantes(e);
+		}
+	}
+	
+	protected void mouseClickedTablaEstudiantes(MouseEvent e) {
+		
+	}
+	
+	public void mouseEntered(MouseEvent e) {
+	}
+	public void mouseExited(MouseEvent e) {
+	}
+	public void mousePressed(MouseEvent e) {
+	}
+	public void mouseReleased(MouseEvent e) {
 	}
 }

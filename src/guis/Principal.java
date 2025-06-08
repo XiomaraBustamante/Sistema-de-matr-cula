@@ -15,6 +15,7 @@ import javax.swing.JLabel;
 import javax.swing.ImageIcon;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.SystemColor;
 
 public class Principal extends JFrame implements ActionListener {
 
@@ -72,7 +73,7 @@ public class Principal extends JFrame implements ActionListener {
 		contentPane.setLayout(null);
 		
 		menuBar = new JMenuBar();
-		menuBar.setBackground(new Color(0, 153, 204));
+		menuBar.setBackground(new Color(204, 0, 51));
 		menuBar.setBounds(0, 0, 784, 48);
 		contentPane.add(menuBar);
 		
@@ -82,6 +83,7 @@ public class Principal extends JFrame implements ActionListener {
 		menuBar.add(mnArchivo);
 		
 		mntmSalir = new JMenuItem("Salir");
+		mntmSalir.setBackground(Color.WHITE);
 		mntmSalir.addActionListener(this);
 		mntmSalir.setForeground(new Color(0, 0, 0));
 		mntmSalir.setFont(new Font("Roboto Condensed", Font.BOLD, 13));
@@ -93,6 +95,7 @@ public class Principal extends JFrame implements ActionListener {
 		menuBar.add(mnMantenimiento);
 		
 		mntmAlumnos = new JMenuItem("Alumnos");
+		mntmAlumnos.setBackground(Color.WHITE);
 		mntmAlumnos.addActionListener(this);
 		mntmAlumnos.setFont(new Font("Roboto Condensed", Font.BOLD, 13));
 		mnMantenimiento.add(mntmAlumnos);
@@ -101,6 +104,7 @@ public class Principal extends JFrame implements ActionListener {
 		mnMantenimiento.add(separator1);
 		
 		mntmCursos = new JMenuItem("Curso");
+		mntmCursos.setBackground(Color.WHITE);
 		mntmCursos.addActionListener(this);
 		mntmCursos.setFont(new Font("Roboto Condensed", Font.BOLD, 13));
 		mnMantenimiento.add(mntmCursos);
@@ -111,6 +115,7 @@ public class Principal extends JFrame implements ActionListener {
 		menuBar.add(mnRegistro);
 		
 		mntmMatrícula = new JMenuItem("Matrícula");
+		mntmMatrícula.setBackground(Color.WHITE);
 		mntmMatrícula.addActionListener(this);
 		mntmMatrícula.setFont(new Font("Roboto Condensed", Font.BOLD, 13));
 		mnRegistro.add(mntmMatrícula);
@@ -119,6 +124,7 @@ public class Principal extends JFrame implements ActionListener {
 		mnRegistro.add(separator2);
 		
 		mntmRetiro = new JMenuItem("Retiro");
+		mntmRetiro.setBackground(Color.WHITE);
 		mntmRetiro.addActionListener(this);
 		mntmRetiro.setFont(new Font("Roboto Condensed", Font.BOLD, 13));
 		mnRegistro.add(mntmRetiro);
@@ -129,6 +135,7 @@ public class Principal extends JFrame implements ActionListener {
 		menuBar.add(mnConsulta);
 		
 		mntmAlumno = new JMenuItem("Alumno");
+		mntmAlumno.setBackground(Color.WHITE);
 		mntmAlumno.addActionListener(this);
 		mntmAlumno.setFont(new Font("Roboto Condensed", Font.BOLD, 13));
 		mnConsulta.add(mntmAlumno);
@@ -137,6 +144,7 @@ public class Principal extends JFrame implements ActionListener {
 		mnConsulta.add(separator);
 		
 		mntmCurso2 = new JMenuItem("Curso");
+		mntmCurso2.setBackground(Color.WHITE);
 		mntmCurso2.setFont(new Font("Roboto Condensed", Font.BOLD, 13));
 		mnConsulta.add(mntmCurso2);
 		
@@ -144,6 +152,7 @@ public class Principal extends JFrame implements ActionListener {
 		mnConsulta.add(separator_1);
 		
 		mntmMatrí = new JMenuItem("Matrícula");
+		mntmMatrí.setBackground(Color.WHITE);
 		mntmMatrí.setFont(new Font("Roboto Condensed", Font.BOLD, 13));
 		mnConsulta.add(mntmMatrí);
 		
@@ -151,6 +160,7 @@ public class Principal extends JFrame implements ActionListener {
 		mnConsulta.add(separator_2);
 		
 		mntmReti = new JMenuItem("Retiro");
+		mntmReti.setBackground(Color.WHITE);
 		mntmReti.setFont(new Font("Roboto Condensed", Font.BOLD, 13));
 		mnConsulta.add(mntmReti);
 		
@@ -160,11 +170,12 @@ public class Principal extends JFrame implements ActionListener {
 		menuBar.add(mnReporte);
 		
 		mntmGeneral = new JMenuItem("General");
+		mntmGeneral.setBackground(Color.WHITE);
 		mntmGeneral.setFont(new Font("Roboto Condensed", Font.BOLD, 13));
 		mnReporte.add(mntmGeneral);
 		
 		lblImagen = new JLabel("");
-		lblImagen.setIcon(new ImageIcon(Principal.class.getResource("/img/MENU.jpg")));
+		lblImagen.setIcon(new ImageIcon(Principal.class.getResource("/img/PRINCIPAL.jpg")));
 		lblImagen.setBounds(0, 46, 784, 515);
 		contentPane.add(lblImagen);
 	}
