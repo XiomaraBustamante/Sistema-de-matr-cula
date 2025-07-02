@@ -5,23 +5,30 @@ public class Alumno {
 	private int codAlumno;
 	private String nombres;
 	private String apellidos;
-	private String Dni;
+	private String dni;
 	private int edad;
+	private int celular;
+	private String correo;
+	private String direc;
 	private int estado;
 	
 	//Constructor
-	public Alumno(int codAlumno, String nombres, String apellidos, String Dni, int edad, int estado) {
-		super();
+	public Alumno(int codAlumno, String nombres, String apellidos, String dni, int edad, int celular, String correo, String direc, int estado) {
 		this.codAlumno = codAlumno;
 		this.nombres = nombres;
 		this.apellidos = apellidos;
-		this.Dni = Dni;
+		this.dni = dni;
 		this.edad = edad;
+		this.celular = celular;
+		this.correo=correo;
+		this.direc=direc;
 		this.estado = estado;
+		
+		
 	}
+
 	
-	
-    //Métodos de acceso público: set/get
+	//Métodos de acceso público: set/get
 	public int getCodAlumno() {
 		return codAlumno;
 	}
@@ -47,11 +54,11 @@ public class Alumno {
 	}
 
 	public String getDni() {
-		return Dni;
+		return dni;
 	}
 
 	public void setDni(String dni) {
-		Dni = dni;
+		this.dni = dni;
 	}
 
 	public int getEdad() {
@@ -62,6 +69,35 @@ public class Alumno {
 		this.edad = edad;
 	}
 
+	public int getCelular() {
+		return celular;
+	}
+
+	public void setCelular(int celular) {
+		this.celular = celular;
+	}
+
+	
+	public String getCorreo() {
+		return correo;
+	}
+
+
+	public void setCorreo(String correo) {
+		this.correo = correo;
+	}
+
+
+	public String getDirec() {
+		return direc;
+	}
+
+
+	public void setDirec(String direc) {
+		this.direc = direc;
+	}
+
+
 	public int getEstado() {
 		return estado;
 	}
@@ -69,6 +105,20 @@ public class Alumno {
 	public void setEstado(int estado) {
 		this.estado = estado;
 	}
+	
+	// Método para obtener nombre del estado
+	public static String obtenerNombreEstado(int estado) {
+	    switch (estado) {
+	        case 0: return "Registrado";
+	        case 1: return "Matriculado";
+	        case 2: return "Retirado";
+	        default: return "Desconocido";
+	    }
+	}
+	
+	
+    
+	
 	
 	
 	

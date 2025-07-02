@@ -53,6 +53,7 @@ public class Principal extends JFrame implements ActionListener {
 				try {
 					Principal frame = new Principal();
 					frame.setVisible(true);
+					frame.setLocationRelativeTo(null);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -64,8 +65,10 @@ public class Principal extends JFrame implements ActionListener {
 	 * Create the frame.
 	 */
 	public Principal() {
+		setTitle("SISTEMA DE MATRICULA | CIBERTEC");
+		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 800, 600);
+		setBounds(100, 100, 925, 628);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
@@ -73,113 +76,136 @@ public class Principal extends JFrame implements ActionListener {
 		contentPane.setLayout(null);
 		
 		menuBar = new JMenuBar();
-		menuBar.setBackground(new Color(204, 0, 51));
-		menuBar.setBounds(0, 0, 784, 48);
+		menuBar.setBackground(new Color(70, 130, 180));
+		menuBar.setBounds(0, 0, 909, 39);
 		contentPane.add(menuBar);
 		
 		mnArchivo = new JMenu("Archivo");
-		mnArchivo.setForeground(new Color(0, 0, 0));
-		mnArchivo.setFont(new Font("Roboto Condensed", Font.BOLD, 14));
+		mnArchivo.setForeground(new Color(255, 255, 255));
+		mnArchivo.setFont(new Font("Segoe UI Black", Font.PLAIN, 14));
 		menuBar.add(mnArchivo);
 		
 		mntmSalir = new JMenuItem("Salir");
-		mntmSalir.setBackground(Color.WHITE);
+		mntmSalir.setIcon(new ImageIcon(Principal.class.getResource("/img/salir.png")));
+		mntmSalir.setBackground(new Color(255, 255, 255));
 		mntmSalir.addActionListener(this);
 		mntmSalir.setForeground(new Color(0, 0, 0));
-		mntmSalir.setFont(new Font("Roboto Condensed", Font.BOLD, 13));
+		mntmSalir.setFont(new Font("Segoe UI Black", Font.PLAIN, 13));
 		mnArchivo.add(mntmSalir);
 		
 		mnMantenimiento = new JMenu("Mantenimiento");
-		mnMantenimiento.setForeground(new Color(0, 0, 0));
-		mnMantenimiento.setFont(new Font("Roboto Condensed", Font.BOLD, 14));
+		mnMantenimiento.setForeground(new Color(255, 255, 255));
+		mnMantenimiento.setFont(new Font("Segoe UI Black", Font.PLAIN, 14));
 		menuBar.add(mnMantenimiento);
 		
 		mntmAlumnos = new JMenuItem("Alumnos");
-		mntmAlumnos.setBackground(Color.WHITE);
+		mntmAlumnos.setForeground(new Color(0, 0, 0));
+		mntmAlumnos.setIcon(new ImageIcon(Principal.class.getResource("/img/alumno.png")));
+		mntmAlumnos.setBackground(new Color(255, 255, 255));
 		mntmAlumnos.addActionListener(this);
-		mntmAlumnos.setFont(new Font("Roboto Condensed", Font.BOLD, 13));
+		mntmAlumnos.setFont(new Font("Segoe UI Black", Font.PLAIN, 13));
 		mnMantenimiento.add(mntmAlumnos);
 		
 		separator1 = new JSeparator();
 		mnMantenimiento.add(separator1);
 		
 		mntmCursos = new JMenuItem("Curso");
+		mntmCursos.setIcon(new ImageIcon(Principal.class.getResource("/img/curso.png")));
 		mntmCursos.setBackground(Color.WHITE);
 		mntmCursos.addActionListener(this);
-		mntmCursos.setFont(new Font("Roboto Condensed", Font.BOLD, 13));
+		mntmCursos.setFont(new Font("Segoe UI Black", Font.PLAIN, 13));
 		mnMantenimiento.add(mntmCursos);
 		
 		mnRegistro = new JMenu("Registro");
-		mnRegistro.setForeground(new Color(0, 0, 0));
-		mnRegistro.setFont(new Font("Roboto Condensed", Font.BOLD, 14));
+		mnRegistro.setForeground(new Color(255, 255, 255));
+		mnRegistro.setFont(new Font("Segoe UI Black", Font.PLAIN, 14));
 		menuBar.add(mnRegistro);
 		
 		mntmMatrícula = new JMenuItem("Matrícula");
-		mntmMatrícula.setBackground(Color.WHITE);
+		mntmMatrícula.setIcon(new ImageIcon(Principal.class.getResource("/img/matri.png")));
+		mntmMatrícula.setBackground(new Color(255, 255, 255));
 		mntmMatrícula.addActionListener(this);
-		mntmMatrícula.setFont(new Font("Roboto Condensed", Font.BOLD, 13));
+		mntmMatrícula.setFont(new Font("Segoe UI Black", Font.PLAIN, 13));
 		mnRegistro.add(mntmMatrícula);
 		
 		separator2 = new JSeparator();
 		mnRegistro.add(separator2);
 		
 		mntmRetiro = new JMenuItem("Retiro");
-		mntmRetiro.setBackground(Color.WHITE);
+		mntmRetiro.setIcon(new ImageIcon(Principal.class.getResource("/img/reti.png")));
+		mntmRetiro.setBackground(new Color(255, 255, 255));
 		mntmRetiro.addActionListener(this);
-		mntmRetiro.setFont(new Font("Roboto Condensed", Font.BOLD, 13));
+		mntmRetiro.setFont(new Font("Segoe UI Black", Font.PLAIN, 13));
 		mnRegistro.add(mntmRetiro);
 		
 		mnConsulta = new JMenu("Consulta");
-		mnConsulta.setForeground(new Color(0, 0, 0));
-		mnConsulta.setFont(new Font("Roboto Condensed", Font.BOLD, 14));
+		mnConsulta.setForeground(new Color(255, 255, 255));
+		mnConsulta.setFont(new Font("Segoe UI Black", Font.PLAIN, 14));
 		menuBar.add(mnConsulta);
 		
 		mntmAlumno = new JMenuItem("Alumno");
+		mntmAlumno.setIcon(new ImageIcon(Principal.class.getResource("/img/consulta.png")));
 		mntmAlumno.setBackground(Color.WHITE);
 		mntmAlumno.addActionListener(this);
-		mntmAlumno.setFont(new Font("Roboto Condensed", Font.BOLD, 13));
+		mntmAlumno.setFont(new Font("Segoe UI Black", Font.PLAIN, 13));
 		mnConsulta.add(mntmAlumno);
 		
 		separator = new JSeparator();
 		mnConsulta.add(separator);
 		
 		mntmCurso2 = new JMenuItem("Curso");
+		mntmCurso2.addActionListener(this);
+		mntmCurso2.setIcon(new ImageIcon(Principal.class.getResource("/img/consulta.png")));
 		mntmCurso2.setBackground(Color.WHITE);
-		mntmCurso2.setFont(new Font("Roboto Condensed", Font.BOLD, 13));
+		mntmCurso2.setFont(new Font("Segoe UI Black", Font.PLAIN, 13));
 		mnConsulta.add(mntmCurso2);
 		
 		separator_1 = new JSeparator();
 		mnConsulta.add(separator_1);
 		
 		mntmMatrí = new JMenuItem("Matrícula");
+		mntmMatrí.addActionListener(this);
+		mntmMatrí.setIcon(new ImageIcon(Principal.class.getResource("/img/consulta.png")));
 		mntmMatrí.setBackground(Color.WHITE);
-		mntmMatrí.setFont(new Font("Roboto Condensed", Font.BOLD, 13));
+		mntmMatrí.setFont(new Font("Segoe UI Black", Font.PLAIN, 13));
 		mnConsulta.add(mntmMatrí);
 		
 		separator_2 = new JSeparator();
 		mnConsulta.add(separator_2);
 		
 		mntmReti = new JMenuItem("Retiro");
+		mntmReti.addActionListener(this);
+		mntmReti.setIcon(new ImageIcon(Principal.class.getResource("/img/consulta.png")));
 		mntmReti.setBackground(Color.WHITE);
-		mntmReti.setFont(new Font("Roboto Condensed", Font.BOLD, 13));
+		mntmReti.setFont(new Font("Segoe UI Black", Font.PLAIN, 13));
 		mnConsulta.add(mntmReti);
 		
 		mnReporte = new JMenu("Reporte");
-		mnReporte.setForeground(new Color(0, 0, 0));
-		mnReporte.setFont(new Font("Roboto Condensed", Font.BOLD, 14));
+		mnReporte.setForeground(new Color(255, 255, 255));
+		mnReporte.setFont(new Font("Segoe UI Black", Font.PLAIN, 14));
 		menuBar.add(mnReporte);
 		
 		mntmGeneral = new JMenuItem("General");
+		mntmGeneral.setIcon(new ImageIcon(Principal.class.getResource("/img/reporte.png")));
 		mntmGeneral.setBackground(Color.WHITE);
-		mntmGeneral.setFont(new Font("Roboto Condensed", Font.BOLD, 13));
+		mntmGeneral.setFont(new Font("Segoe UI Black", Font.PLAIN, 13));
 		mnReporte.add(mntmGeneral);
 		
 		lblImagen = new JLabel("");
-		lblImagen.setIcon(new ImageIcon(Principal.class.getResource("/img/PRINCIPAL.jpg")));
-		lblImagen.setBounds(0, 46, 784, 515);
+		lblImagen.setIcon(new ImageIcon(Principal.class.getResource("/img/principal.png")));
+		lblImagen.setBounds(0, 35, 909, 554);
 		contentPane.add(lblImagen);
 	}
 	public void actionPerformed(ActionEvent e) {
+		if (e.getSource() == mntmReti) {
+			actionPerformedMntmReti(e);
+		}
+		if (e.getSource() == mntmMatrí) {
+			actionPerformedMntmMatrí(e);
+		}
+		if (e.getSource() == mntmCurso2) {
+			actionPerformedMntmCurso2(e);
+		}
 		if (e.getSource() == mntmAlumno) {
 			actionPerformedMntmAlumno(e);
 		}
@@ -225,6 +251,24 @@ public class Principal extends JFrame implements ActionListener {
 	}
 	protected void actionPerformedMntmAlumno(ActionEvent e) {
 		DlgConsuAlumno dc = new DlgConsuAlumno();
+		 dc.setLocationRelativeTo(this);
+		 dc.setVisible(true);
+	}
+	
+
+	protected void actionPerformedMntmCurso2(ActionEvent e) {
+		DlgConsuCurso dc = new DlgConsuCurso();
+		 dc.setLocationRelativeTo(this);
+		 dc.setVisible(true);
+	}
+	protected void actionPerformedMntmMatrí(ActionEvent e) {
+		DlConsuMatricula dc = new DlConsuMatricula();
+		 dc.setLocationRelativeTo(this);
+		 dc.setVisible(true);
+		
+	}
+	protected void actionPerformedMntmReti(ActionEvent e) {
+		DlgConsuRetiro dc = new DlgConsuRetiro();
 		 dc.setLocationRelativeTo(this);
 		 dc.setVisible(true);
 	}

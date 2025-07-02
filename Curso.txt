@@ -1,0 +1,21 @@
+1001;DHP I;1;4;Teórico;Virtual;3
+1002;Introducción a la Algoritmia;1;6;Teórico+Laboratorio;Presencial;9
+1003;Taller de Gráfica Digital I;1;5;Teórico+Laboratorio;Presencial;4
+1004;Semiótica de la Imagen;2;3;Teórico;Virtual;3
+1005;Innovación y emprendimiento;5;6;Teórico;Virtual;4
+1006;EFRDT I;2;12;Teórico;Virtual;9
+1007;Matemática I;1;3;Teórico;Virtual;3
+1008;Planning y Social Media;6;6;Teórico+Laboratorio;Presencial;6
+1009;Diseño de Interfaces Multimedia I;3;3;Laboratorio;Presencial;6
+1010;Infografía;4;2;Teórico;Virtual;4
+1011;Negocios Internacionales;1;4;Teórico;Presencial;4
+1012;Estadística;2;6;Teórico+Laboratorio;Presencial;4
+1013;Derecho Tributario;5;4;Teórico;Virtual;6
+1014;Derecho Empresarial;3;3;Teórico;Virtual;2
+1015;Taller de Planillas;4;5;Laboratorio;Presencial;6
+1016;Auditoría Financiera;6;4;Teórico;Virtual;2
+1017;Base de Datos;2;4;Teórico+Laboratorio;Presencial;6
+1018;Análisis y Diseño de Sistemas I;3;5;Teórico+Laboratorio;Presencial;7
+1019;Gestión de Servicios de TI;4;3;Teórico;Virtual;3
+1020;Seguridad de Aplicaciones;5;4;Laboratorio;Presencial;4
+1021;Plan de Negocios;6;4;Teórico;Virtual;2
